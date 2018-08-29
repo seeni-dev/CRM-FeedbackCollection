@@ -13,7 +13,7 @@ def getHtml(link):
 
 class Downloader():
     def __init__(self,product,name="Default"):
-        self.product=product
+        self.product=product.lower()
         self.link=self.makeLink()
         self.name=name
         return
@@ -25,6 +25,13 @@ class Downloader():
     def getPage(self):
         self.content=getHtml(self.link)
         self.soup=bs4.BeautifulSoup(self.content)
+        #check for the prodcut exists in the store and the page is the one
+        title=self.soup.title.contents[0].lower()
+        if(not self.product in title):
+            import pdb
+            pdb.set_trace()
+            raise Exception("Product not in store or Irrevelant Page Reached")
+
         return
 
     def getScore(self):
