@@ -102,7 +102,9 @@ class FlipkartDownloader(Downloader):
         reviewlink=self.prependDomain(reviewanchor["href"])
         self.reviewsoup=bs4.BeautifulSoup(getHtml(reviewlink))
         #extract reviews from the page
-        return reviewlink
+        reviewsdivs=self.reviewsoup.find_all("div",{"class":"qwjRop"})
+        reviews=[r.div.div.contents[0] for r in reviewsdivs]
+        return reviews
 
 
 class AmazonDownloader(Downloader):
