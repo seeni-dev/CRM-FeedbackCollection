@@ -21,5 +21,13 @@ def testLinkExtract():
     print(f.link)
     return
 
+
+def testgetScore():
+    product = input("Enter prodcut name:")
+    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+    f.getPage()
+    score=f.getScore()
+    print(score)
+
 if __name__ == '__main__':
-    testLinkExtract()
+    testgetScore()

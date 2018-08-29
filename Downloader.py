@@ -24,6 +24,7 @@ class Downloader():
 
     def getPage(self):
         self.content=getHtml(self.link)
+        self.soup=bs4.BeautifulSoup(self.content)
         return
 
     def getScore(self):
@@ -82,7 +83,9 @@ class FlipkartDownloader(Downloader):
 
     def getScore(self):
         #todo get Score for Flipkart
-        pass
+        results=self.soup.find_all("div",{"class":"hGSR34 _2beYZw"})
+        return results[0].contents[0]
+
 
     def getReviews(self):
         #todo get Reviews for Flipkart
