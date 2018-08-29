@@ -2,10 +2,12 @@ import os
 import pickle
 import bs4
 import requests
-
+import urllib.request as Req
 
 def getHtml(link):
     #todo Get the page from the source
+    res=Req.urlopen(link)
+    return res.read()
     pass
 
 
