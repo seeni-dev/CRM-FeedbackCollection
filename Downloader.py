@@ -1,7 +1,8 @@
 import os
+import pickle
 import bs4
 import requests
-import json
+
 
 def getHtml(link):
     #todo Get the page from the source
@@ -38,8 +39,9 @@ class Downloader():
         productDir=os.path.join(self.product,self.name)
         os.makedirs(productDir,exist_ok=True)
 
-        with open(os.path.join(productDir,"summary.json"),"w") as file:
-            json.dump(summary,file)
+        with open(os.path.join(productDir,"summary.json"),"wb") as file:
+            pickle.dump(summary,file)
+
         return
 
     def process(self):
