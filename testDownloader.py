@@ -1,40 +1,42 @@
 import  Downloader as d
 
-def testEncode():
-    product=input("Enter prodcut name:")
-    f=d.FlipkartDownloader(product) # encode will be caleed in here.
-    print(f.link)
-    print("")
+class testFlipkartDownloader():
+    def testEncode(self):
+        product=input("Enter prodcut name:")
+        f=d.FlipkartDownloader(product) # encode will be caleed in here.
+        print(f.link)
+        print("")
 
-def testgetHtml():
-    product = input("Enter prodcut name:")
-    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
-    content=d.getHtml(f.link)
-    print(content)
-    with open("temp.html","wb") as f:
-        f.write(content)
-
-
-def testLinkExtract():
-    product = input("Enter prodcut name:")
-    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
-    print(f.link)
-    return
+    def testgetHtml(self):
+        product = input("Enter prodcut name:")
+        f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+        content=d.getHtml(f.link)
+        print(content)
+        with open("temp.html","wb") as f:
+            f.write(content)
 
 
-def testgetScore():
-    product = input("Enter prodcut name:")
-    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
-    f.getPage()
-    score=f.getScore()
-    print(score)
+    def testLinkExtract(self):
+        product = input("Enter prodcut name:")
+        f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+        print(f.link)
+        return
 
-def testGetReviews():
-    product = input("Enter product name:")
-    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
-    f.getPage()
-    print(f.getReviews())
+
+    def testgetScore(self):
+        product = input("Enter prodcut name:")
+        f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+        f.getPage()
+        score=f.getScore()
+        print(score)
+
+    def testGetReviews(self):
+        product = input("Enter product name:")
+        f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+        f.getPage()
+        print(f.getReviews())
 
 
 if __name__ == '__main__':
-    testGetReviews()
+    tfd=testFlipkartDownloader()
+    tfd.testGetReviews()
