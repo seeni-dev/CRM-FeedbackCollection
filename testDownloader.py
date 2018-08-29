@@ -36,7 +36,13 @@ class testFlipkartDownloader():
         f.getPage()
         print(f.getReviews())
 
+    def testOverall(self):
+        product = input("Enter product name:")
+        f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+        print("Process Initiated")
+        f.process()
+        print("Dump Complete")
 
 if __name__ == '__main__':
     tfd=testFlipkartDownloader()
-    tfd.testGetReviews()
+    tfd.testOverall()

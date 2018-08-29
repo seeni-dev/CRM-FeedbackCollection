@@ -3,12 +3,13 @@ import pickle
 import bs4
 import requests
 import urllib.request as Req
+import json
 
 def getHtml(link):
     #todo Get the page from the source
     res=Req.urlopen(link)
     return res.read()
-    pass
+
 
 
 class Downloader():
@@ -20,7 +21,7 @@ class Downloader():
 
     def makeLink(self,product):
         #should be derived in derived class
-        pass
+        raise Exception("Needs to be implemented")
 
     def getPage(self):
         self.content=getHtml(self.link)
@@ -34,21 +35,22 @@ class Downloader():
 
     def getScore(self):
         #should be implemented in Derived Class
-        pass
+        raise Exception("Needs to be implemented")
 
     def getReviews(self):
         #should be implemented in derived class
-        pass
+        raise Exception("Needs to be implemented")
 
     def saveSummary(self,summary):
 
         #make directory for for the product
-        os.makedirs(self.product,exist_ok=True)
-        productDir=os.path.join(self.product,self.name)
+        os.makedirs("DATA", exist_ok=True)
+        os.makedirs(os.path.join("DATA",self.product),exist_ok=True)
+        productDir=os.path.join("DATA",self.product,self.name)
         os.makedirs(productDir,exist_ok=True)
 
-        with open(os.path.join(productDir,"summary.json"),"wb") as file:
-            pickle.dump(summary,file)
+        with open(os.path.join(productDir,"summary.json"),"w") as file:
+            json.dump(summary,file)
 
         return
 
@@ -57,7 +59,6 @@ class Downloader():
         summary={}
         summary["score"]=self.getScore()
         summary["reviews"]=self.getReviews()
-
         self.saveSummary(summary)
 
 
