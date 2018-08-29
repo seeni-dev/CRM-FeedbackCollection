@@ -75,7 +75,10 @@ class FlipkartDownloader(Downloader):
         #get the search results page
         search_q="https://www.flipkart.com/search?q="+encode(self.product)+"&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off"
         #get the first product page link
-        return search_q #todo 3 create a link for flipkart
+        soup=bs4.BeautifulSoup(getHtml(search_q))
+        results=soup.find_all("a",{"class":"_31qSD5"})
+        product_q="https://www.flipkart.com"+results[0]["href"]
+        return product_q #todo 3 create a link for flipkart
 
     def getScore(self):
         #todo get Score for Flipkart

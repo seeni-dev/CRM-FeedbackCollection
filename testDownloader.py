@@ -15,5 +15,11 @@ def testgetHtml():
         f.write(content)
 
 
+def testLinkExtract():
+    product = input("Enter prodcut name:")
+    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+    print(f.link)
+    return
+
 if __name__ == '__main__':
-    testgetHtml()
+    testLinkExtract()
