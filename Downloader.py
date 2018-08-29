@@ -28,8 +28,6 @@ class Downloader():
         #check for the prodcut exists in the store and the page is the one
         title=self.soup.title.contents[0].lower()
         if(not self.product in title):
-            import pdb
-            pdb.set_trace()
             raise Exception("Product not in store or Irrevelant Page Reached")
 
         return
