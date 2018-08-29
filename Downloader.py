@@ -86,6 +86,9 @@ class FlipkartDownloader(Downloader):
         product_q="https://www.flipkart.com"+results[0]["href"]
         return product_q #todo 3 create a link for flipkart
 
+    def prependDomain(self,link):
+        return "https://www.flipkart.com"+link
+
     def getScore(self):
         #todo get Score for Flipkart
         results=self.soup.find_all("div",{"class":"hGSR34 _2beYZw"})
@@ -94,7 +97,12 @@ class FlipkartDownloader(Downloader):
 
     def getReviews(self):
         #todo get Reviews for Flipkart
-        pass
+        #get all %n review page
+        reviewanchor=self.soup.find_all("div",{"class":"swINJg _3nrCtb"})[0].parent
+        reviewlink=self.prependDomain(reviewanchor["href"])
+        self.reviewsoup=bs4.BeautifulSoup(getHtml(reviewlink))
+        #extract reviews from the page
+        return reviewlink
 
 
 class AmazonDownloader(Downloader):

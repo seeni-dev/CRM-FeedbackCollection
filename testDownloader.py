@@ -29,5 +29,12 @@ def testgetScore():
     score=f.getScore()
     print(score)
 
+def testGetReviews():
+    product = input("Enter product name:")
+    f = d.FlipkartDownloader(product)  # encode will be caleed in here.
+    f.getPage()
+    print(f.getReviews())
+
+
 if __name__ == '__main__':
-    testgetScore()
+    testGetReviews()
