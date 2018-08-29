@@ -11,7 +11,7 @@ def getHtml(link):
 class Downloader():
     def __init__(self,product,name="Default"):
         self.product=product
-        self.link=self.makeLink(product)
+        self.link=self.makeLink()
         self.name=name
         return
 
@@ -51,14 +51,27 @@ class Downloader():
         self.saveSummary(summary)
 
 
+def encode(name):
+    '''Encode the space characters in the name with %20'''
+    s=""
+    for n in name:
+        if(n==" "):
+            s+="%20"
+        else:
+            s+=n
+
+    return s
 
 class FlipkartDownloader(Downloader):
 
     def __init__(self,product,name="Flipkart"):
         super().__init__(product,name)
 
-    def makeLink(self,product):
-        return "" #todo 3 create a link for flipkart
+    def makeLink(self):
+        #get the search results page
+        search_q="https://www.flipkart.com/search?q="+encode(self.product)+"&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off"
+        #get the first product page link
+        return search_q #todo 3 create a link for flipkart
 
     def getScore(self):
         #todo get Score for Flipkart
