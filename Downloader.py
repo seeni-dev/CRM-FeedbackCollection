@@ -114,12 +114,20 @@ class AmazonDownloader(Downloader):
         super().__init__(product, name)
 
     def makeLink(self, product):
-        return ""  # todo 3 create a link for Amazon
+        search_q="www.amazon.com/seqrch/q="+product
+        soup=bs4.BeautifulSoup(getHtml(search_q))
+        product_q=soup.find_all("a",{"class":"a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal"})[0]["href"]
+        return product_q
 
     def getScore(self):
         # todo get Score for Amazon
-        pass
+        self.soup=bs4.BeautifulSoup(getHtml(self.link))
+        score_node=self.soup.find_all("div",{"id":"averageCustomerReviews"})
+        score=score_node.span.span.span.a.i.span.contents[0][:3]
+        return score
 
     def getReviews(self):
         # todo get Reviews for Amazon
-        pass
+        reviews=self.soup.find_all("div",{"class":"a-expander-content a-expander-partial-collapse-content"})
+        return [review.textContent for review in reviews ]
+
