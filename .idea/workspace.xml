@@ -27,8 +27,8 @@
       <file leaf-file-name="testDownloader.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/testDownloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="73">
-              <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+            <state relative-caret-position="55">
+              <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -45,8 +45,8 @@
       <file leaf-file-name="Downloader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Downloader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="37">
-              <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+            <state relative-caret-position="36">
+              <caret line="143" selection-start-line="143" selection-end-line="143" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -160,7 +160,21 @@
       <option name="project" value="LOCAL" />
       <updated>1535988989615</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Done amazon">
+      <created>1536123149673</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1536123149673</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Done amazon makeLink">
+      <created>1536124336709</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1536124336709</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -223,7 +237,9 @@
     <MESSAGE value="done json" />
     <MESSAGE value="woring encode" />
     <MESSAGE value="done Downloader.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="done Downloader.py" />
+    <MESSAGE value="Done amazon" />
+    <MESSAGE value="Done amazon makeLink" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done amazon makeLink" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DownloadReview.py">
@@ -456,24 +472,10 @@
     <entry file="file://$PROJECT_DIR$/FlipkartDownloader.py" />
     <entry file="file://$PROJECT_DIR$/Nova/Flipkart/summary.json" />
     <entry file="file://$PROJECT_DIR$/Nova/Amazon/summary.json" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DATA/honor 7x/Flipkart/summary.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="346" selection-start-column="346" selection-end-column="346" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testDownloader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="48" column="21" lean-forward="true" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -484,10 +486,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/lib/python3.6/bdb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="39">
+          <caret line="97" selection-start-line="97" selection-end-line="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="5" selection-start-column="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testDownloader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Downloader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="126" column="8" selection-start-line="126" selection-start-column="8" selection-end-line="126" selection-end-column="8" />
+        <state relative-caret-position="36">
+          <caret line="143" selection-start-line="143" selection-end-line="143" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

@@ -134,12 +134,12 @@ class AmazonDownloader(Downloader):
     def getScore(self):
         # todo get Score for Amazon
         self.soup=bs4.BeautifulSoup(getHtml(self.link))
-        score_node=self.soup.find_all("div",{"id":"averageCustomerReviews"})
-        score=score_node.span.span.span.a.i.span.contents[0][:3]
+        score_node=self.soup.find_all("span",{"class":"reviewCountTextLinkedHistogram"})[0]
+        score=score_node["title"][:3]
         return score
 
     def getReviews(self):
         # todo get Reviews for Amazon
-        reviews=self.soup.find_all("div",{"class":"a-expander-content a-expander-partial-collapse-content"})
-        return [review.textContent for review in reviews ]
+        reviews=self.soup.find_all("span",{"class":"review-text"})
+        return [review.text for review in reviews ]
 

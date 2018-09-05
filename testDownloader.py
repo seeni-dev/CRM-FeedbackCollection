@@ -49,6 +49,19 @@ class testAmazonDownloader():
         print(a.link)
         return a.link
 
+    def testgetScore(self):
+        a = d.AmazonDownloader("Oneplus 6")
+        print(a.getScore())
+        return
+
+    def testGetReviews(self):
+        a = d.AmazonDownloader("Oneplus 6")
+        a.getScore()
+        print(a.getReviews())
+        return
+
+
 if __name__ == '__main__':
     tfd=testAmazonDownloader()
-    link=tfd.testMakeLink()
+    link=tfd.testgetScore()
+    tfd.testGetReviews()
