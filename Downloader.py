@@ -7,8 +7,11 @@ import json
 
 def getHtml(link):
     #todo Get the page from the source
-    res=Req.urlopen(link)
-    return res.read()
+    headers={
+        "User-Agent": 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
+    }
+    res=requests.get(link,headers=headers)
+    return res.text
 
 
 
@@ -125,7 +128,7 @@ class AmazonDownloader(Downloader):
     def makeLink(self):
         search_q="https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+self.encode(self.product)
         soup=bs4.BeautifulSoup(getHtml(search_q))
-        product_q=soup.find_all("a",{"class":"a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal"})[0]["href"]
+        product_q=soup.find_all("a",{"class":"s-access-detail-page"})[0]["href"]
         return product_q
 
     def getScore(self):
