@@ -113,8 +113,17 @@ class AmazonDownloader(Downloader):
     def __init__(self, product, name="Amazon"):
         super().__init__(product, name)
 
-    def makeLink(self, product):
-        search_q="www.amazon.com/seqrch/q="+product
+    def encode(self,s):
+        ss=""
+        for c in s:
+            if(c==" "):
+                ss+="+"
+            else:
+                ss+=c
+        return ss
+
+    def makeLink(self):
+        search_q="https://www.amazon.in/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords="+self.encode(self.product)
         soup=bs4.BeautifulSoup(getHtml(search_q))
         product_q=soup.find_all("a",{"class":"a-link-normal s-access-detail-page  s-color-twister-title-link a-text-normal"})[0]["href"]
         return product_q

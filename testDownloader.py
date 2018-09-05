@@ -43,6 +43,12 @@ class testFlipkartDownloader():
         f.process()
         print("Dump Complete")
 
+class testAmazonDownloader():
+    def testMakeLink(self):
+        a=d.AmazonDownloader("Oneplus 6")
+        print(a.link)
+        return a.link
+
 if __name__ == '__main__':
-    tfd=testFlipkartDownloader()
-    tfd.testOverall()
+    tfd=testAmazonDownloader()
+    link=tfd.testMakeLink()
