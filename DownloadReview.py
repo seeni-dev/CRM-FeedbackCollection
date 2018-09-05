@@ -11,8 +11,14 @@ def AmazonDownloader(product):
     return
 
 def downloadReview(product):
-    FlipkartDownloader(product)
-    AmazonDownloader(product)
+    try:
+        FlipkartDownloader(product)
+    except:
+        print("Product not found in Flipkart")
+    try:
+        AmazonDownloader(product)
+    except:
+        print("Product not found in Amazon")
     return
 
 def driver():
